@@ -8,6 +8,7 @@ namespace StudyGame.Managers
 {
     public class Enums
     {
+        //public Emotions Test;
         public enum Emotions
         {
             Normal,

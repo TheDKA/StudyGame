@@ -9,11 +9,13 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
 using StudyGame.Managers;
+using StudyGame.Characters;
 
 namespace StudyGame.Characters
 {
     public abstract class CharacterBase
     {
+        public Enums.Emotions _emotions { get; set; }
         #region Variables
         public ContentManager Content;
         #endregion
@@ -23,14 +25,16 @@ namespace StudyGame.Characters
         #endregion
 
         #region Methods
-        public CharacterBase(string _name)
+        public CharacterBase(string _name, Enums.Emotions emotion)
         {
             Name = _name;
+            _emotions = emotion;
             // TODO
         }
 
         public CharacterBase(Texture2D texture)
         {
+
         }
 
         public virtual void LoadContent()

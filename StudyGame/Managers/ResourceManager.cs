@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Diagnostics;
 
+using MonoGame.Extended.BitmapFonts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
@@ -16,42 +17,33 @@ namespace StudyGame.Managers
         #region Variables
         // Dictionary for allocate the resources path and your content.
         private static Dictionary<string, Texture2D> _alloc = new Dictionary<string, Texture2D>();
-        private static Dictionary<string, SpriteFont> _allocFonts = new Dictionary<string, SpriteFont>();
+        private static Dictionary<string, BitmapFont> _allocFonts = new Dictionary<string, BitmapFont>();
 
         // ContentManager initializer.
         private static ContentManager _content = new ContentManager(SceneManager.Instance.Content.ServiceProvider, "Content");
         #endregion
 
         #region Methods
+        // TODO: [ ] Create a new loading way
         public static Texture2D LoadBackgrounds(string fileName) => LoadResources($@"images/backgrounds/{fileName}");
 
-        public static Texture2D LoadSprites(string fileName) => LoadResources($@"images/characters/{fileName}");
+        // TODO: [ ] Create a new loading way without use "optionalPath"
+        public static Texture2D LoadSprites(string fileName, string optionalPath) => LoadResources($@"images/characters/{(optionalPath != null ? optionalPath + "/" : "")}{fileName}");
 
-        public static SpriteFont LoadFont(string fileName) => LoadSpriteFont($@"fonts/{fileName}");
+        public static BitmapFont LoadFont(string fileName) => LoadSpriteFont($@"fonts/{fileName}");
 
         public static Texture2D LoadResources(string fileName)
         {
-            if (!_alloc.ContainsKey(fileName)) {
-                try {
+            if (!_alloc.ContainsKey(fileName))
                     _alloc[fileName] = _content.Load<Texture2D>(fileName);
-                }
-                catch (Exception ex) {
-                    Debug.WriteLine(ex.ToString());
-                }
-            }
+
             return _alloc[fileName];
         }
-
-        public static SpriteFont LoadSpriteFont(string fileName)
+        public static BitmapFont LoadSpriteFont(string fileName)
         {
-            if (!_allocFonts.ContainsKey(fileName)) {
-                try {
-                    _allocFonts[fileName] = _content.Load<SpriteFont>(fileName);
-                }
-                catch (Exception ex) {
-                    Debug.WriteLine(ex.ToString());
-                }
-            }
+            if (!_allocFonts.ContainsKey(fileName))
+                    _allocFonts[fileName] = _content.Load<BitmapFont>(fileName);
+
             return _allocFonts[fileName];
         }
         #endregion

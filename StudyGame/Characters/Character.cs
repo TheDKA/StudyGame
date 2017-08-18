@@ -17,26 +17,34 @@ namespace StudyGame.Characters
     {
         //public IEnum.Emotions Test { get; set; }
         #region Variables
-        public Enums.Emotions en;
         #endregion
 
         #region Fields
-        public List<Texture2D> Texture { get { return Textures; } }
+        public List<Texture2D> GirlSprites { get { return Girl; } }
         #endregion
 
         #region Methods
-        public Character(string name) : base(name)
+        public Character(string name, Enums.Emotions emotion) : base(name, emotion)
         {
             SceneGame.Position = new Vector2(300, 150);
-            Textures = Texture;
+            Girl = GirlSprites;
+            _emotions = emotion;
         }
 
-        private List<Texture2D> Textures = new List<Texture2D>()
+        //--------------------------
+        // Only for test purproses.
+
+        private List<Texture2D> Girl = new List<Texture2D>()
         {
-            ResourceManager.LoadSprites("normal"),
-            ResourceManager.LoadSprites("happy"),
-            ResourceManager.LoadSprites("surprise"),
-            ResourceManager.LoadSprites("angry")
+            ResourceManager.LoadSprites("girl_normal", "girl1"),
+            ResourceManager.LoadSprites("girl_happy", "girl1"),
+            ResourceManager.LoadSprites("girl_surprise", "girl1"),
+            ResourceManager.LoadSprites("girl_angry", "girl1"),
+        };
+
+        private List<Texture2D> Concept = new List<Texture2D>()
+        {
+
         };
         #endregion
     }
