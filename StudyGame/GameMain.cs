@@ -24,6 +24,7 @@ namespace StudyGame
             // TODO: Viewport
             graphics.PreferredBackBufferHeight = (int)SceneManager.Instance.Dimensions.Y;
             graphics.PreferredBackBufferWidth = (int)SceneManager.Instance.Dimensions.X;
+            //graphics.IsFullScreen = true;
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
         }

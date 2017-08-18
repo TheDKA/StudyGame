@@ -7,40 +7,51 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.Input;
+
+using StudyGame.Characters;
 using StudyGame.Managers;
+
 
 namespace StudyGame.Scenes
 {
-    public class SceneSplash : SceneBase
+    public class SceneGame : SceneBase
     {
-        #region Variables
-        // Textures.
-        private Texture2D _background;
-        #endregion
+        private Player _player;
+        private Texture2D Texture;
+        private SpriteFont spriteFont;
 
+        // Position aqui vai se referir a posição do player que está na classe Player.
+        public static Vector2 Position { get; set; }
         #region Methods
         public override void LoadContent()
         {
             base.LoadContent();
-            _background = ResourceManager.LoadBackgrounds("splashscreen");
+            _player = new Player(ResourceManager.LoadSprites("girl"), "Garota");
+            Texture = _player.Texture;
+            spriteFont = ResourceManager.LoadFont("Arial");
         }
 
         public override void UnloadContent()
         {
-            Content.Unload();
+
+            base.UnloadContent();
+
         }
+
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
+
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
             spriteBatch.Begin();
-            spriteBatch.Draw(_background, Vector2.Zero, Color.White);
+            spriteBatch.Draw(Texture, Position, Color.White);
+            spriteBatch.DrawString(spriteFont, _player.Name, new Vector2(Position.X + 50, Position.Y), Color.White);
             spriteBatch.End();
+
         }
         #endregion
     }

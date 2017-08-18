@@ -37,3 +37,9 @@
 /processorParam:TextureFormat=Color
 /build:images/characters/girl.png
 
+#begin fonts/Arial.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:fonts/Arial.spritefont
+

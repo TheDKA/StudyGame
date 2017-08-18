@@ -35,10 +35,6 @@ namespace StudyGame.Scenes
             //InputManager.Instance.Update();
         }
 
-        public void UpdateFps(GameTime gameTime)
-        {
-        }
-
         public virtual void Draw(SpriteBatch spriteBatch)
         {
         }

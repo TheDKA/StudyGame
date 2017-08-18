@@ -10,11 +10,7 @@ using Microsoft.Xna.Framework.Content;
 
 namespace StudyGame.Managers
 {
-    public class HudManager
+    public class Objeto
     {
-        public HudManager()
-        {
-            // TODO
-        }
     }
 }
