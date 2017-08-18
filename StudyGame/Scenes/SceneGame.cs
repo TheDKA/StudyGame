@@ -16,18 +16,39 @@ namespace StudyGame.Scenes
 {
     public class SceneGame : SceneBase
     {
-        private Player _player;
+        public enum Emotions
+        {
+            Teste
+        }
+        //private Player _player;
+        private Character _character;
         private Texture2D Texture;
         private SpriteFont spriteFont;
 
-        // Position aqui vai se referir a posição do player que está na classe Player.
         public static Vector2 Position { get; set; }
         #region Methods
         public override void LoadContent()
         {
             base.LoadContent();
-            _player = new Player(ResourceManager.LoadSprites("girl"), "Garota");
-            Texture = _player.Texture;
+            _character = new Character("Garota");
+
+            // TODO: 1- Do it another way; 2- Try to start this in the constructor
+            _character.en = Enums.Emotions.Normal;
+
+            // Only for test purposes.
+            switch (_character.en) {
+
+                case Enums.Emotions.Normal: Texture = _character.Texture[0]; break;
+
+                case Enums.Emotions.Happy: Texture = _character.Texture[1]; break;
+
+                case Enums.Emotions.Surprised: Texture = _character.Texture[2]; break;
+
+                case Enums.Emotions.Angry: Texture = _character.Texture[3]; break;
+
+            }
+
+            //Texture = _character.Texture;
             spriteFont = ResourceManager.LoadFont("Arial");
         }
 
@@ -49,7 +70,7 @@ namespace StudyGame.Scenes
             base.Draw(spriteBatch);
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, Position, Color.White);
-            spriteBatch.DrawString(spriteFont, _player.Name, new Vector2(Position.X + 50, Position.Y), Color.White);
+            spriteBatch.DrawString(spriteFont, _character.Name, new Vector2(Position.X + 50, Position.Y), Color.White);
             spriteBatch.End();
 
         }

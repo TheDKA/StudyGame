@@ -12,14 +12,25 @@ using StudyGame.Managers;
 
 namespace StudyGame.Characters
 {
-    public abstract class CharacterBase : Objeto
+    public abstract class CharacterBase
     {
+        #region Variables
         public ContentManager Content;
+        #endregion
+
+        #region Fields
         public string Name { get; set; }
-        public CharacterBase(Texture2D texture, string _name)
+        #endregion
+
+        #region Methods
+        public CharacterBase(string _name)
         {
             Name = _name;
             // TODO
+        }
+
+        public CharacterBase(Texture2D texture)
+        {
         }
 
         public virtual void LoadContent()
@@ -40,5 +51,6 @@ namespace StudyGame.Characters
         {
 
         }
+        #endregion
     }
 }

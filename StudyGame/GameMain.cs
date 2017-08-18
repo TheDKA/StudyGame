@@ -87,8 +87,10 @@ namespace StudyGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-            SceneManager.Instance.GetCurrentScene();
+            //GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            //TODO: SceneManager.Instance.GetCurrentScene();
+
             // TODO: Change 'spriteBatch.Begin' and 'spriteBatch.End' to their respective "correct positions"
             //spriteBatch.Begin();
             SceneManager.Instance.Draw(spriteBatch);

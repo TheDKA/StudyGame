@@ -15,20 +15,20 @@ namespace StudyGame.Characters
 {
     public class Player : CharacterBase
     {
+        //origin var
+
         private Texture2D _texture;
         public Texture2D Texture { get { return _texture; } }
+
         /// <summary>
         /// Player Constructor.
         /// </summary>
-        /// <param name="texture">Textura que vai ser carregada na hora de instanciar a classe player.</param>
-        /// <param name="_name">"Nome" da textura em questão.</param>
-        public Player(Texture2D texture, string _name) : base(texture, _name)
+        /// <param name="texture">Texture that will be load when player class be instantiated.</param>
+        public Player(Texture2D texture) : base(texture)
         {
             this._texture = texture;
-            SceneGame.Position = new Vector2(300, 150);
-            // TODO
+            //SceneGame.Position = new Vector2(300, 150);
         }
-
         public override void LoadContent()
         {
             base.LoadContent();

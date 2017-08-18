@@ -27,10 +27,7 @@ namespace StudyGame.Managers
 
         public static Texture2D LoadSprites(string fileName) => LoadResources($@"images/characters/{fileName}");
 
-        public static SpriteFont LoadFont(string fileName)
-        {
-            return LoadSpriteFont($@"fonts/{fileName}");
-        }
+        public static SpriteFont LoadFont(string fileName) => LoadSpriteFont($@"fonts/{fileName}");
 
         public static Texture2D LoadResources(string fileName)
         {

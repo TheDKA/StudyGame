@@ -39,19 +39,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Characters\CharacterBase.cs" />
+    <Compile Include="Characters\Character.cs" />
     <Compile Include="Characters\Player.cs" />
     <Compile Include="GameMain.cs" />
     <Compile Include="Managers\BackgroundManager.cs" />
+    <Compile Include="Managers\Enums.cs" />
     <Compile Include="Managers\HudManager.cs" />
     <Compile Include="Managers\ResourceManager.cs" />
     <Compile Include="Managers\InputManager.cs" />
-    <Compile Include="Managers\Objeto.cs" />
     <Compile Include="Managers\SceneManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scenes\SceneGame.cs" />
     <Compile Include="Scenes\SceneBase.cs" />
+    <Compile Include="Scenes\SceneLoad.cs" />
+    <Compile Include="Scenes\SceneOptions.cs" />
     <Compile Include="Scenes\SceneSplash.cs" />
+    <Compile Include="Scenes\SceneMenu.cs" />
     <Compile Include="Sprites\SpriteManager.cs" />
   </ItemGroup>
   <ItemGroup>
