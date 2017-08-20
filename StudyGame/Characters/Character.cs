@@ -21,14 +21,20 @@ namespace StudyGame.Characters
 
         #region Fields
         public List<Texture2D> GirlSprites { get { return Girl; } }
+        public List<Texture2D> Concept { get { return ListConcept; } }
         #endregion
 
         #region Methods
-        public Character(string name, Enums.Emotions emotion) : base(name, emotion)
+        //public Character(string name, Enums.Emotions emotion) : base(name, emotion)
+        //{
+        //    SceneGame.Position = new Vector2(300, 150);
+        //    Girl = GirlSprites;
+        //    _emotions = emotion;
+        //}
+        public Character(string name, Enums.Emotions Emotions) : base(name, Emotions)
         {
             SceneGame.Position = new Vector2(300, 150);
             Girl = GirlSprites;
-            _emotions = emotion;
         }
 
         //--------------------------
@@ -42,7 +48,7 @@ namespace StudyGame.Characters
             ResourceManager.LoadSprites("girl_angry", "girl1"),
         };
 
-        private List<Texture2D> Concept = new List<Texture2D>()
+        private List<Texture2D> ListConcept = new List<Texture2D>()
         {
 
         };

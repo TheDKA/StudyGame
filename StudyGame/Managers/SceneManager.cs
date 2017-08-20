@@ -60,9 +60,9 @@ namespace StudyGame.Managers
             _bgScene.LoadContent();
         }
 
-        public void UpdateFps(GameTime gameTime)
-        {
-        }
+        //public void UpdateFps(GameTime gameTime)
+        //{
+        //}
 
         public void Update(GameTime gameTime)
         {

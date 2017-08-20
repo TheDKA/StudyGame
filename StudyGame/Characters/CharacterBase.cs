@@ -32,6 +32,12 @@ namespace StudyGame.Characters
             // TODO
         }
 
+        //public CharacterBase(string _name, Enums.Emotions Emotions)
+        //{
+        //    Name = _name;
+        //    // TODO
+        //}
+
         public CharacterBase(Texture2D texture)
         {
 
