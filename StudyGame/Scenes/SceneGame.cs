@@ -19,7 +19,7 @@ namespace StudyGame.Scenes
 {
     public class SceneGame : SceneBase
     {
-        //private Player _player;
+        ///private Player _player;
         private Character _character;
         private Texture2D Texture;
         private BitmapFont font;
