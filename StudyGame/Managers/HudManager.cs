@@ -14,7 +14,6 @@ namespace StudyGame.Managers
     {
         public HudManager()
         {
-            // TODO
         }
     }
 }

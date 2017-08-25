@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudyGame.Scenes
 {
-    public class SceneOptions
+    public class SceneSelectChar
     {
-        // TODO
     }
 }

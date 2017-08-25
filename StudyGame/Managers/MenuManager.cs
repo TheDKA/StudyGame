@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudyGame.Scenes
+namespace StudyGame.Managers
 {
-    public class SceneLoad
+    class MenuManager
     {
-        // Load game.
-        // TODO
     }
 }

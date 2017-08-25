@@ -15,30 +15,16 @@ namespace StudyGame.Characters
 {
     public abstract class CharacterBase
     {
-        public Enums.Emotions _emotions { get; set; }
         #region Variables
-        public ContentManager Content;
+        private ContentManager Content;
         #endregion
 
         #region Fields
-        public string Name { get; set; }
         #endregion
 
         #region Methods
-        public CharacterBase(string _name, Enums.Emotions emotion)
-        {
-            Name = _name;
-            _emotions = emotion;
-            // TODO
-        }
 
-        //public CharacterBase(string _name, Enums.Emotions Emotions)
-        //{
-        //    Name = _name;
-        //    // TODO
-        //}
-
-        public CharacterBase(Texture2D texture)
+        public CharacterBase()
         {
 
         }

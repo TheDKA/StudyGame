@@ -8,9 +8,13 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 
-namespace StudyGame.Sprites
+using StudyGame.Managers;
+using StudyGame.Characters;
+
+namespace StudyGame.Characters
 {
-    public class SpriteManager
+    public class EnemyBase : CharacterBase
     {
+
     }
 }

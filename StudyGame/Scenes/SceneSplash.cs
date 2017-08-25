@@ -15,16 +15,10 @@ namespace StudyGame.Scenes
 {
     public class SceneSplash : SceneBase
     {
-        #region Variables
-        // Textures.
-        private Texture2D _background;
-        #endregion
-
         #region Methods
         public override void LoadContent()
         {
             base.LoadContent();
-            _background = ResourceManager.LoadBackgrounds("splashscreen");
         }
 
         public override void UnloadContent()
@@ -40,7 +34,6 @@ namespace StudyGame.Scenes
         {
             base.Draw(spriteBatch);
             spriteBatch.Begin();
-            spriteBatch.Draw(_background, Vector2.Zero, Color.White);
             spriteBatch.End();
         }
         #endregion

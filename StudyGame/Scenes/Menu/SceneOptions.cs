@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudyGame.Scenes
+namespace StudyGame.Scenes.Menu
 {
-    public class SceneMenu
+    class SceneOptions
     {
-        // Menu Screen (Title).
-        // TODO
     }
 }

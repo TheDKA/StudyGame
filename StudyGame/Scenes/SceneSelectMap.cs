@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StudyGame.Managers
+namespace StudyGame.Scenes
 {
-    public class Enums
+    public class SceneSelectMap
     {
-
     }
 }
