@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-using MonoGame.Extended;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+
+using MonoGame.Extended;
 
 using StudyGame.Scenes;
 
@@ -46,8 +44,9 @@ namespace StudyGame.Managers
         public SceneManager()
         {
             // TODO: Viewport
-            Dimensions = new Vector2(800, 600);
-            _currentScene = new SceneSplash();
+            //Dimensions = new Vector2(800, 600);
+            //_currentScene = new SceneSplash();
+            _currentScene = new SceneGame();
             _bgScene = new SceneGame();
         }
 
@@ -59,10 +58,6 @@ namespace StudyGame.Managers
             _currentScene.LoadContent();
             _bgScene.LoadContent();
         }
-
-        //public void UpdateFps(GameTime gameTime)
-        //{
-        //}
 
         public void Update(GameTime gameTime)
         {

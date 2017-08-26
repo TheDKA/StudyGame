@@ -19,9 +19,6 @@ namespace StudyGame.Characters
         private ContentManager Content;
         #endregion
 
-        #region Fields
-        #endregion
-
         #region Methods
 
         public CharacterBase()

@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Input;
 
 using StudyGame.Managers;
+using StudyGame.Sprites;
 
 namespace StudyGame
 {
@@ -22,9 +23,10 @@ namespace StudyGame
             graphics = new GraphicsDeviceManager(this);
             // Screen Size.
             // TODO: Viewport
-            graphics.PreferredBackBufferHeight = (int)SceneManager.Instance.Dimensions.Y;
-            graphics.PreferredBackBufferWidth = (int)SceneManager.Instance.Dimensions.X;
+            //graphics.PreferredBackBufferHeight = (int)SceneManager.Instance.Dimensions.Y;
+            //graphics.PreferredBackBufferWidth = (int)SceneManager.Instance.Dimensions.X;
             //graphics.IsFullScreen = true;
+            //IsMouseVisible = true;
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
         }
@@ -87,14 +89,14 @@ namespace StudyGame
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            //GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.CornflowerBlue);
 
             //TODO: SceneManager.Instance.GetCurrentScene();
 
             // TODO: Change 'spriteBatch.Begin' and 'spriteBatch.End' to their respective "correct positions"
-            //spriteBatch.Begin();
+            spriteBatch.Begin();
             SceneManager.Instance.Draw(spriteBatch);
-            //spriteBatch.End();
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

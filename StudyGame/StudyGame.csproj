@@ -61,15 +61,10 @@
     <Compile Include="Scenes\SceneSelectMap.cs" />
     <Compile Include="Scenes\SceneSplash.cs" />
     <Compile Include="Sprites\Animation.cs" />
-    <Compile Include="Sprites\SpriteManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Extended, Version=0.6.568.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MonoGame.Extended.0.6.568\lib\portable-net45+win8+wpa81\MonoGame.Extended.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MonoGame.Extended.Animations, Version=0.6.568.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MonoGame.Extended.Animations.0.6.568\lib\portable-net45+win8+wpa81\MonoGame.Extended.Animations.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MonoGame.Extended.Graphics, Version=0.6.568.0, Culture=neutral, processorArchitecture=MSIL">
