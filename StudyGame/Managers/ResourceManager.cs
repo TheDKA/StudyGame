@@ -14,7 +14,7 @@ namespace StudyGame.Managers
     {
         #region Variables
         // Dictionary for allocate the resources path and your content.
-        private static Dictionary<string, Texture2D> _alloc = new Dictionary<string, Texture2D>();
+        private static Dictionary<string, object> _alloc = new Dictionary<string, object>();
         private static Dictionary<string, BitmapFont> _allocFonts = new Dictionary<string, BitmapFont>();
 
         // ContentManager initializer.
@@ -23,26 +23,22 @@ namespace StudyGame.Managers
 
         #region Methods
         // TODO: [ ] Create a new loading way
-        public static Texture2D LoadBackgrounds(string fileName) => LoadResources($@"images/backgrounds/{fileName}");
+        public static object LoadBackgrounds(string fileName) => LoadResources($@"images/backgrounds/{fileName}", "sprite");
 
         // TODO: [ ] Create a new loading way without use "optionalPath"
-        public static Texture2D LoadSprites(string fileName, string optionalPath) => LoadResources($@"images/characters/{(optionalPath != null ? optionalPath + "/" : "")}{fileName}");
+        public static object LoadSprites(string fileName, string optionalPath) => LoadResources($@"images/characters/{(optionalPath != null ? optionalPath + "/" : "")}{fileName}", "sprite");
 
-        public static BitmapFont LoadFont(string fileName) => LoadSpriteFont($@"fonts/{fileName}");
+        public static object LoadFont(string fileName) => LoadResources($@"fonts/{fileName}", "font");
 
-        public static Texture2D LoadResources(string fileName)
+        public static object LoadResources(string fileName, string type)
         {
             if (!_alloc.ContainsKey(fileName))
+                if (type == "sprite")
                     _alloc[fileName] = _content.Load<Texture2D>(fileName);
+                else if (type == "font")
+                    _alloc[fileName] = _content.Load<BitmapFont>(fileName);
 
             return _alloc[fileName];
-        }
-        public static BitmapFont LoadSpriteFont(string fileName)
-        {
-            if (!_allocFonts.ContainsKey(fileName))
-                    _allocFonts[fileName] = _content.Load<BitmapFont>(fileName);
-
-            return _allocFonts[fileName];
         }
         #endregion
     }

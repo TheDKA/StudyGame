@@ -48,7 +48,7 @@ namespace StudyGame.Sprites
         {
             this.frameTime = frameSpeed;
             this.framesNumber = framesNumber;
-            this.texture = ResourceManager.LoadSprites(asset, null);
+            this.texture = (Texture2D)ResourceManager.LoadSprites(asset, null);
 
             frameWidth = (texture.Width / framesNumber);
             frameHeight = (texture.Height);
