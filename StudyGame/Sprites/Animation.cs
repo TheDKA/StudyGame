@@ -12,7 +12,7 @@ namespace StudyGame.Sprites
 {
     public class Animation {
 
-        //================== Variables ==================//
+        #region Vars
 
         private ContentManager Content;
 
@@ -32,22 +32,66 @@ namespace StudyGame.Sprites
         private int currentFrame;
         private int frameWidth;
         private int frameHeight;
+        #endregion
 
-        public Vector2 Position { get { return position; } set { position = value; } }
 
-        public Rectangle SourceRect { get { return sourceRect; } set { sourceRect = value; } }
+        #region Propertys
+        public Vector2 Position
+        {
+            get
+            {
+                return position;
+            }
+            set
+            {
+                position = value;
+            }
+        }
 
-        public float FrameTime { get { return frameTime; } set { frameTime = value; } }
+        public Rectangle SourceRect
+        {
+            get
+            {
+                return sourceRect;
+            }
+            set
+            {
+                sourceRect = value;
+            }
+        }
 
-        public Texture2D Texture { get { return texture; } set { texture = value; } }
+        public float FrameTime
+        {
+            get
+            {
+                return frameTime;
+            }
+            set
+            {
+                frameTime = value;
+            }
+        }
 
-        //===============================================//
+        public Texture2D Texture
+        {
+            get
+            {
+                return texture;
+            }
+            set
+            {
+                texture = value;
+            }
+        }
+        #endregion
+
 
         #region Methods
         public Animation(string asset, float frameSpeed, int framesNumber)
         {
             this.frameTime = frameSpeed;
             this.framesNumber = framesNumber;
+            // Cast because the methods Load Sprites belong the type "object" and must be an explicit type method.
             this.texture = (Texture2D)ResourceManager.LoadSprites(asset, null);
 
             frameWidth = (texture.Width / framesNumber);
@@ -75,8 +119,8 @@ namespace StudyGame.Sprites
             // Reset position.
             // [ ] TODO: Fix Monogame input bug.
 
-            if (currentKbState.GetPressedKeys().Length == 0) {
-
+            if (currentKbState.GetPressedKeys().Length == 0)
+            {
                 if (currentFrame > 0 && currentFrame <= 4)
                     currentFrame = 2;
 
@@ -88,14 +132,11 @@ namespace StudyGame.Sprites
 
                 else if (currentFrame > 8 && currentFrame <= 12)
                     currentFrame = 10;
-
             }
 
-
-            //================== Right ==================//
-
-            if (currentKbState.IsKeyDown(Keys.D)) {
-                // Colisão com a borda da direita.
+            // Right edge collision.
+            if (currentKbState.IsKeyDown(Keys.D))
+            {
                 if (position.X < 760)
                     position.X += frameTime;
 
@@ -104,7 +145,8 @@ namespace StudyGame.Sprites
 
                 elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-                if (elapsed > frameTime) {
+                if (elapsed > frameTime)
+                {
                     currentFrame++;
 
                     if (currentFrame > 11)
@@ -115,11 +157,9 @@ namespace StudyGame.Sprites
 
             }
 
-
-            //================== Left ==================//
-
-            else if (currentKbState.IsKeyDown(Keys.A)) {
-                // Colisão com a borda da esquerda.
+            // Left edge collision.
+            else if (currentKbState.IsKeyDown(Keys.A))
+            {
                 if (position.X > 10)
                     position.X -= frameTime;
 
@@ -128,7 +168,8 @@ namespace StudyGame.Sprites
 
                 elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-                if (elapsed > frameTime) {
+                if (elapsed > frameTime)
+                {
                     currentFrame++;
 
                     if (currentFrame > 7)
@@ -138,11 +179,9 @@ namespace StudyGame.Sprites
                 }
             }
 
-
-            //================== Down ==================//
-
-            else if (currentKbState.IsKeyDown(Keys.S)) {
-                // Colisão com a borda de baixo.
+            // Bottom edge collision.
+            else if (currentKbState.IsKeyDown(Keys.S))
+            {
                 if (position.Y < 430)
                     position.Y += frameTime;
 
@@ -151,7 +190,8 @@ namespace StudyGame.Sprites
 
                 elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-                if (elapsed > frameTime) {
+                if (elapsed > frameTime)
+                {
                     currentFrame++;
 
                     if (currentFrame > 3)
@@ -161,11 +201,9 @@ namespace StudyGame.Sprites
                 }
             }
 
-
-            //================== Up ==================//
-
-            if (currentKbState.IsKeyDown(Keys.W)) {
-                // Colisão com a borda de cima.
+            // Top edge collision.
+            if (currentKbState.IsKeyDown(Keys.W))
+            {
                 if (position.Y > 20)
                     position.Y -= frameTime;
 
@@ -174,7 +212,8 @@ namespace StudyGame.Sprites
 
                 elapsed += (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
-                if (elapsed > frameTime) {
+                if (elapsed > frameTime)
+                {
                     currentFrame++;
 
                     if (currentFrame > 15)

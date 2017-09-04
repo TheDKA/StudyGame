@@ -13,7 +13,7 @@ namespace StudyGame.Managers
 {
     public class SceneManager
     {
-        #region Variables
+        #region Vars
         public GraphicsDevice GraphicsDevice;
         public SpriteBatch SpriteBatch;
 
@@ -26,15 +26,19 @@ namespace StudyGame.Managers
         private static SceneManager _instance;
         #endregion
 
-        #region Fields
+        #region Propertys
         public Vector2 Dimensions { get; private set; }
         public ContentManager Content { get; private set; }
-        public static SceneManager Instance {
-            get {
-                if (_instance == null) {
+
+        // SceneManager Singleton for easy acess.
+        public static SceneManager Instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
                     _instance = new SceneManager();
                 }
-
                 return _instance;
             }
         }

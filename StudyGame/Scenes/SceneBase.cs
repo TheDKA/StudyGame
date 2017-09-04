@@ -12,7 +12,7 @@ namespace StudyGame.Scenes
 {
     public abstract class SceneBase
     {
-        #region Variables
+        #region Vars
         public ContentManager Content;
         #endregion
 

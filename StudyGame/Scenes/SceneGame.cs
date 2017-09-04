@@ -42,7 +42,8 @@ namespace StudyGame.Scenes
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);           
-            spriteBatch.Draw(animation.Texture, animation.Position, animation.SourceRect, Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
+            spriteBatch.Draw(animation.Texture, animation.Position, animation.SourceRect,
+                Color.White, 0f, Vector2.Zero, 1f, SpriteEffects.None, 1f);
         }
         #endregion
     }
